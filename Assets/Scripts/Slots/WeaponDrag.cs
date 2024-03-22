@@ -50,6 +50,7 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             textError.SetActive(true);
             Debug.LogError("Sem dinheiro pra essa arma!!!");
             blockMovement = true;
+            cadeadoAnim.SetInteger("transition", 3);
         }
         else if (!IsBought)//Apenas para fazer uma animação, para dar um feedback melhor pro player
         {
@@ -85,16 +86,18 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             textError.SetActive(false);
             blockMovement = false;
+            cadeadoAnim.SetInteger("transition", -1);
         }
-        
+        else if (cadeadoAnim.GetInteger("transition") != 1)//Se nao estiver tocando a anim de arma comprada...
+        {
+            cadeadoAnim.SetInteger("transition", 2);//Executo a anim do cadeado trancando de volta
+        }
+
         im.raycastTarget = true;
         transform.SetParent(ParentTransf);
         transform.localPosition = Vector3.zero;
 
-        if (cadeadoAnim.GetInteger("transition") != 1)//Se nao estiver tocando a anim de arma comprada...
-        {
-            cadeadoAnim.SetInteger("transition", 2);//Executo a anim do cadeado trancando de volta
-        }
+
 
         //TreatmentSlotAllocated();//Metodo meu que nao deu certo, e se voce esta lendo isso, e pq esqueci de apagar
     }

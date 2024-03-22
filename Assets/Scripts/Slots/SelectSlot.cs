@@ -26,8 +26,12 @@ public class SelectSlot : MonoBehaviour, IDropHandler
     {
         GameObject dropped = eventData.pointerDrag;
         WeaponDrag weap = dropped.GetComponent<WeaponDrag>();
+
+        if (pCoin.GetCoins() < weap.CostOfWeapon)//Toda logica que ocorre pra baixo desse codigo e considerando que voce possa comprar a arma.
+            return;//Mas se o player nao tem moedas para isso. bloqueio o codigo nesse return
+
         controller.OnChangeWeaponDrag(weap);
-        if(weap.IsBought == false)//Se ela ainda nao foi comprada...
+        if (weap.IsBought == false )//Se ela ainda nao foi comprada...
         {
             BuyWeapon(weap.CostOfWeapon);
             weap.IsBought = true;
