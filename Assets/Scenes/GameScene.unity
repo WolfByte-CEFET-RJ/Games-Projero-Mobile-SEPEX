@@ -1298,7 +1298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 167, y: 115}
+  m_AnchoredPosition: {x: 167, y: 156.8}
   m_SizeDelta: {x: 149.0555, y: 55.3531}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &148627994
@@ -6723,7 +6723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 917740014}
   m_Layer: 5
-  m_Name: Loja2
+  m_Name: Loja2 Critico
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6847,7 +6847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 962438935}
   m_Layer: 5
-  m_Name: Loja1
+  m_Name: Loja1 Velocidade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10403,6 +10403,13 @@ MonoBehaviour:
   hitOnEnemy: {fileID: 8300000, guid: 11fff18db3b03aa468dfb695b328b1fa, type: 3}
   menuBtnIn: {fileID: 8300000, guid: 263a15d62203a4642b721c8678f234d8, type: 3}
   menuBtnOut: {fileID: 8300000, guid: 46216bb10b7fc9141bd9a8272fc0745e, type: 3}
+  upgradesSfx:
+  - {fileID: 8300000, guid: e5f5a2cb25cee1d4d8f5b58be9dc63a5, type: 3}
+  - {fileID: 8300000, guid: 0a2ae0ebd960aaf4195a565bc6710f0f, type: 3}
+  - {fileID: 8300000, guid: 184bd0054ba20544d8a7f84015228407, type: 3}
+  - {fileID: 8300000, guid: 8fb87f839af85d045b89e42734fdd556, type: 3}
+  - {fileID: 8300000, guid: 7504584acf0be6641b4d7234e23411d1, type: 3}
+  errorSfx: {fileID: 8300000, guid: b8fea6f342a717d48af96b16014b386b, type: 3}
   myMixer: {fileID: 24100000, guid: 15a61bafec91ac64f8ca7df1e50b576a, type: 2}
 --- !u!4 &1373477368
 Transform:
@@ -12230,7 +12237,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618938649}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -13028,7 +13035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679812494}
   m_Layer: 5
-  m_Name: Loja3
+  m_Name: Loja3 Alcance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

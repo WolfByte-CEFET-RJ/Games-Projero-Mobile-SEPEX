@@ -48,7 +48,7 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (!IsBought && CostOfWeapon > pCoin.GetCoins())//Se ela ainda não foi comprada e o player nao tiver dinheiro suficiente
         {
             textError.SetActive(true);
-            Debug.LogError("Sem dinheiro pra essa arma!!!");
+            AudioManager.main.PlaySFX(AudioManager.main.errorSfx);
             blockMovement = true;
             cadeadoAnim.SetInteger("transition", 3);
         }

@@ -13,12 +13,18 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource backgroundMusic;
     [SerializeField] AudioSource soundFX;
     [Header("Audio Clips")]
+    [Header("\tGame and Menu musics")]
     public AudioClip musicGame;
     public AudioClip musicMenu;
+    [Header("\tHit effects")]
     public AudioClip hitOnPlayer;
     public AudioClip hitOnEnemy;
+    [Header("\tMenu effects")]
     public AudioClip menuBtnIn;
     public AudioClip menuBtnOut;
+    [Header("\tShop effects")]
+    public AudioClip[] upgradesSfx;
+    public AudioClip errorSfx;
     [Header("Audio Mixer")]
     [SerializeField] AudioMixer myMixer;
 

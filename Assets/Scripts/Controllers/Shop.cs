@@ -30,6 +30,7 @@ public class Shop : MonoBehaviour
         {
             if(coins.GetCoins() >= 5)
             {
+                AudioManager.main.PlaySFX(AudioManager.main.upgradesSfx[conters[0]]);
                 conters[0]++;
                 i.sprite = statusBar[conters[0]];
                 coins.SetCoins(5, 0);
@@ -48,6 +49,7 @@ public class Shop : MonoBehaviour
         {
             if(coins.GetCoins() >= 10)
             {
+                AudioManager.main.PlaySFX(AudioManager.main.upgradesSfx[conters[1]]);
                 conters[1]++;
                 i.sprite = statusBar[conters[1]];
                 coins.SetCoins(10, 1);
@@ -68,6 +70,7 @@ public class Shop : MonoBehaviour
         {
             if (coins.GetCoins() >= 10)
             {
+                AudioManager.main.PlaySFX(AudioManager.main.upgradesSfx[conters[2]]);
                 conters[2]++;
                 i.sprite = statusBar[conters[2]];
                 coins.SetCoins(10, 2);
@@ -90,7 +93,8 @@ public class Shop : MonoBehaviour
     IEnumerator ShowErrorTxt(string txt, Text errorTarget, int index)
     {
         errorTarget.text = txt;
-        errorCont[index]++; 
+        errorCont[index]++;
+        AudioManager.main.PlaySFX(AudioManager.main.errorSfx);
         yield return new WaitForSeconds(1.5f);
         errorCont[index]--;
         if(errorCont[index] == 0)
