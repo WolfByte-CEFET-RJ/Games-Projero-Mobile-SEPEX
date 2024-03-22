@@ -31,6 +31,7 @@ public class SelectSlot : MonoBehaviour, IDropHandler
         {
             BuyWeapon(weap.CostOfWeapon);
             weap.IsBought = true;
+            weap.CadeadoAnim.SetInteger("transition", 1);
         }
         weap.ParentTransf = transform;
         if (!WeaponDragReference)//Se o slot esta vazio

@@ -20,17 +20,18 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     //Aqui, temos um obj que esta "por baixo" dos outros objs, permitindo que ele possa estar a frente dos outros
     [Header("ShopSettings")]
     [SerializeField] private int costOfWeapon;
-    [SerializeField] private GameObject lockObj;
+    [SerializeField] private Animator cadeadoAnim;
     [SerializeField] private GameObject textError;
 
     private SelectSlot slotAllocated;
     private PlayerCoin pCoin;
-    #region Atributtes
+    #region Atributtes(Getters and Setters)
     public Transform ParentTransf { private get => parentTransf; set => parentTransf = value; }
     public Transform WeaponReference { get => weaponReference;  set => weaponReference = value; }
     public Transform InitialParent { get => initialParent; private set => initialParent = value; }
     public bool IsBought { get => isBought; set => isBought = value; }
     public int CostOfWeapon { get => costOfWeapon; private set => costOfWeapon = value; }
+    public Animator CadeadoAnim { get => cadeadoAnim; set => cadeadoAnim = value; }
 
     #endregion
     void Start()
@@ -44,18 +45,21 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!IsBought && CostOfWeapon > pCoin.GetCoins())//Se nao tiver dinheiro suficiente
+        if (!IsBought && CostOfWeapon > pCoin.GetCoins())//Se ela ainda não foi comprada e o player nao tiver dinheiro suficiente
         {
             textError.SetActive(true);
             Debug.LogError("Sem dinheiro pra essa arma!!!");
             blockMovement = true;
+        }
+        else if (!IsBought)//Apenas para fazer uma animação, para dar um feedback melhor pro player
+        {
+            cadeadoAnim.SetInteger("transition", 0);//Animacao de abrir cadeado
         }
             
 
         im.raycastTarget = false;
         ParentTransf = transform.parent;
         transform.SetParent(parentVisible);
-        //Debug.Log("Começo do drag");
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -74,25 +78,25 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             transform.position = Input.mousePosition;
         }
-        //Debug.Log("Drag");
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(blockMovement)
+        if(blockMovement)//Se o movimento foi bloqueado no inicio, desativo o texto de erro e reseto o booleano de controle
         {
             textError.SetActive(false);
             blockMovement = false;
         }
-        else if(lockObj != null && lockObj.activeInHierarchy)
-        {
-            lockObj.SetActive(false);
-        }
+        
         im.raycastTarget = true;
         transform.SetParent(ParentTransf);
         transform.localPosition = Vector3.zero;
-        //Debug.Log("Fim do drag");
 
-        //TreatmentSlotAllocated();
+        if (cadeadoAnim.GetInteger("transition") != 1)//Se nao estiver tocando a anim de arma comprada...
+        {
+            cadeadoAnim.SetInteger("transition", 2);//Executo a anim do cadeado trancando de volta
+        }
+
+        //TreatmentSlotAllocated();//Metodo meu que nao deu certo, e se voce esta lendo isso, e pq esqueci de apagar
     }
 
     void TreatmentSlotAllocated()//Metodo com o fim de, caso uma arma seja movida de um selectSlot pra outro, consiga tratar esse caso em 

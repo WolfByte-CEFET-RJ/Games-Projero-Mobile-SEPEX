@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnlockWeapon : MonoBehaviour
+public class UnlockWeapon : MonoBehaviour//Joel-> Script obsoleto. Desbloquear armas será algo que ocorrerá na loja apenas. Em breve deleto o script.
 {
     [SerializeField] private GameObject weaponToUnlock;
     [SerializeField][Range (1,3)] private int weaponIndex;//Numero entre 1,2 e 3 
