@@ -50,11 +50,15 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             textError.SetActive(true);
             AudioManager.main.PlaySFX(AudioManager.main.errorSfx);
             blockMovement = true;
-            cadeadoAnim.SetInteger("transition", 3);
+            if(cadeadoAnim != null)
+                cadeadoAnim.SetInteger("transition", 3);
         }
         else if (!IsBought)//Apenas para fazer uma animação, para dar um feedback melhor pro player
         {
-            cadeadoAnim.SetInteger("transition", 0);//Animacao de abrir cadeado
+            if(cadeadoAnim != null)
+            {
+                cadeadoAnim.SetInteger("transition", 0);//Animacao de abrir cadeado
+            }
         }
             
 
@@ -86,9 +90,10 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             textError.SetActive(false);
             blockMovement = false;
-            cadeadoAnim.SetInteger("transition", -1);
+            if(cadeadoAnim != null)
+                cadeadoAnim.SetInteger("transition", -1);
         }
-        else if (cadeadoAnim.GetInteger("transition") != 1)//Se nao estiver tocando a anim de arma comprada...
+        else if (cadeadoAnim != null && cadeadoAnim.GetInteger("transition") != 1)//Se nao estiver tocando a anim de arma comprada...
         {
             cadeadoAnim.SetInteger("transition", 2);//Executo a anim do cadeado trancando de volta
         }
@@ -102,13 +107,5 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         //TreatmentSlotAllocated();//Metodo meu que nao deu certo, e se voce esta lendo isso, e pq esqueci de apagar
     }
 
-    void TreatmentSlotAllocated()//Metodo com o fim de, caso uma arma seja movida de um selectSlot pra outro, consiga tratar esse caso em 
-    {//Particular, dando ao weaponDragReference do primeiro slot o valor de null
-        if (ParentTransf.GetComponent<SelectSlot>())
-        {
-            if(slotAllocated)
-                slotAllocated.WeaponDragReference = null;          
-            slotAllocated = ParentTransf.GetComponent<SelectSlot>();   
-        }
-    }
+   
 }

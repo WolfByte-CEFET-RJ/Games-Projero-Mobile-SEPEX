@@ -88,6 +88,7 @@ public class Shop : MonoBehaviour
 
     public void MoveShop(string animat)
     {
+        AudioManager.main.PlaySFX(AudioManager.main.menuBtnIn);
         movementAnim.Play(animat);
     }
     IEnumerator ShowErrorTxt(string txt, Text errorTarget, int index)

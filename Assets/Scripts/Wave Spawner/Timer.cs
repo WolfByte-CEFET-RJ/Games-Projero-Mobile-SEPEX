@@ -17,7 +17,6 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timerText.color = Color.yellow;
-        
     }
     private void OnEnable()
     {
@@ -47,10 +46,29 @@ public class Timer : MonoBehaviour
             enabled = false;
         }
         SetTimerText();
-
+        executeSound();
     }
     private void SetTimerText()
     {
         timerText.text = currentTime.ToString("0");
+    }
+
+    private string controlString = "";
+    private void executeSound()
+    {
+        if(controlString != currentTime.ToString("0"))
+        {
+            controlString = currentTime.ToString("0");
+
+            if (currentTime > 2.25f)//Efeitos para o 5, 4 e 3
+            {
+                AudioManager.main.PlaySFX(AudioManager.main.timerSfx);
+
+            }
+            else//Efeitos para o 2, 1 e 0
+            {
+                AudioManager.main.PlaySFX(AudioManager.main.timerFinalSfx);
+            }
+        }
     }
 }

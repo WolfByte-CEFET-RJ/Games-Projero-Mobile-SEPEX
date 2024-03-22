@@ -25,6 +25,9 @@ public class AudioManager : MonoBehaviour
     [Header("\tShop effects")]
     public AudioClip[] upgradesSfx;
     public AudioClip errorSfx;
+    [Header("\tTimer effects")]
+    public AudioClip timerSfx;
+    public AudioClip timerFinalSfx;
     [Header("Audio Mixer")]
     [SerializeField] AudioMixer myMixer;
 

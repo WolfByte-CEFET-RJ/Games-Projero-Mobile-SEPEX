@@ -35,7 +35,8 @@ public class SelectSlot : MonoBehaviour, IDropHandler
         {
             BuyWeapon(weap.CostOfWeapon);
             weap.IsBought = true;
-            weap.CadeadoAnim.SetInteger("transition", 1);
+            if (weap.CadeadoAnim != null)
+                StartCoroutine(OpenCadeado(weap));
         }
         weap.ParentTransf = transform;
         if (!WeaponDragReference)//Se o slot esta vazio
@@ -55,6 +56,12 @@ public class SelectSlot : MonoBehaviour, IDropHandler
             SetNewParent(WeaponDragReference.WeaponReference, playerSlotTransf);
         }
         
+    }
+    IEnumerator OpenCadeado(WeaponDrag weap)
+    {
+        weap.CadeadoAnim.SetInteger("transition", 1);
+        yield return new WaitForSeconds(1);
+        weap.CadeadoAnim.gameObject.SetActive(false);
     }
     void BuyWeapon(int price)
     {

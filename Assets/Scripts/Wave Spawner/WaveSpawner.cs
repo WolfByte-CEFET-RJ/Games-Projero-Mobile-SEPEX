@@ -82,7 +82,7 @@ public class WaveSpawner : MonoBehaviour
     {
         timer.SetActive(true);
         botao.SetActive(false);
-        x.currentTime = 5;
+        x.currentTime = 5.5f;
         x.enabled=true;
         x.timerText.color = Color.yellow;
     }
