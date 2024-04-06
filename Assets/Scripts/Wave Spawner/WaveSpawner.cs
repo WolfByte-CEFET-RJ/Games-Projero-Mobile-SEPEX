@@ -9,10 +9,19 @@ public class Wave
     public GameObject[] typeOfEnemies;
     public GameObject boss;
     public float spawnInterval;
+
+    public Wave(int qtdEnemies, string wName, GameObject[] tEn, GameObject b, float spInter)
+    {
+        numOfEnemies = qtdEnemies;
+        waveName = wName;
+        typeOfEnemies = tEn;
+        boss = b;
+        spawnInterval = spInter;
+    }
 }
 public class WaveSpawner : MonoBehaviour
 {
-    public bool win;
+    public bool iniciarModoInfinito = false;
     public Wave[] waves;
     public GameObject botao, timer;
     public Timer x;
@@ -29,26 +38,44 @@ public class WaveSpawner : MonoBehaviour
     private PlayerLife playerLife;
     GameObject[] totalEnemies;
     GameObject[] totalWarnings;
+
+    private int totalInimigos;
+    private bool controleNovaWave;
     private void Start()
     {
         playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
     }
     private void Update()
     {
-        
+        if(!iniciarModoInfinito)
             currentWave = waves[currentWaveNumber];
+        else
+        {
+            if(!controleNovaWave)
+            {
+                criarWaveInfinita();
+                controleNovaWave = true;
+            }
+        }
         SpawnWave();
-         totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-         totalWarnings = GameObject.FindGameObjectsWithTag("Warning");
-        if (totalEnemies.Length == 0 && !canSpawn && currentWaveNumber + 1 != waves.Length)
+        totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        totalWarnings = GameObject.FindGameObjectsWithTag("Warning");
+        if (totalEnemies.Length == 0 && !canSpawn /*&& currentWaveNumber + 1 != waves.Length*/)
         {
             OnBot();
 
         }
-        if (currentWaveNumber + 1 == waves.Length && currentWave.numOfEnemies == 0 && totalEnemies.Length == 0 && totalWarnings.Length==0)
+        if (currentWaveNumber + 1 == waves.Length && currentWave.numOfEnemies == 0 && totalEnemies.Length == 0 && totalWarnings.Length==0 && !iniciarModoInfinito)
         {
-            win = true;
+            iniciarModoInfinito = true;
+            totalInimigos = waves[4].numOfEnemies + 5;
         }
+    }
+    void criarWaveInfinita()
+    {
+        Wave novaWave = new Wave(totalInimigos, waves[4].waveName, waves[4].typeOfEnemies, waves[4].boss, waves[4].spawnInterval);
+        currentWave = novaWave;
+        totalInimigos += 5;
     }
     void OnBot()
     {
@@ -112,8 +139,10 @@ public class WaveSpawner : MonoBehaviour
             }
             if(currentWave.numOfEnemies == 0)
             {
-                canSpawn = false;
-                win = false;
+                canSpawn = false;             
+                if (iniciarModoInfinito)
+                    controleNovaWave = false;
+
             }
         }
         

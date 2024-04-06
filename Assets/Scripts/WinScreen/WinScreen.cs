@@ -16,9 +16,9 @@ public class WinScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (controller.win)
-        {
-            winScreen.SetActive(true);
-        }
+        //if (controller.iniciarModoInfinito)
+        //{
+        //   winScreen.SetActive(true);
+        //}
     }
 }
