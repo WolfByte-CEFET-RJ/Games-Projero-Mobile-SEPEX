@@ -44,6 +44,7 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
+        totalInimigos = waves[4].numOfEnemies + 5;//Esse total inimigos so sera aproveitado na geracao de waves infinitas
     }
     private void Update()
     {
@@ -60,22 +61,29 @@ public class WaveSpawner : MonoBehaviour
         SpawnWave();
         totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         totalWarnings = GameObject.FindGameObjectsWithTag("Warning");
-        if (totalEnemies.Length == 0 && !canSpawn /*&& currentWaveNumber + 1 != waves.Length*/)
+        if (totalWarnings.Length == 0 && totalEnemies.Length == 0 && !canSpawn /*&& currentWaveNumber + 1 != waves.Length*/)
         {
             OnBot();
-
         }
         if (currentWaveNumber + 1 == waves.Length && currentWave.numOfEnemies == 0 && totalEnemies.Length == 0 && totalWarnings.Length==0 && !iniciarModoInfinito)
         {
             iniciarModoInfinito = true;
-            totalInimigos = waves[4].numOfEnemies + 5;
         }
     }
     void criarWaveInfinita()
     {
-        Wave novaWave = new Wave(totalInimigos, waves[4].waveName, waves[4].typeOfEnemies, waves[4].boss, waves[4].spawnInterval);
+        Wave novaWave;
+        if((currentWaveNumber + 2) % 6 == 0)//Se for um múltiplo de 6, hora de spawnar boss fliperama
+        {
+            novaWave = new Wave(1, waves[4].waveName, waves[5].typeOfEnemies, waves[5].boss, waves[5].spawnInterval);
+        }
+        else//Senão, waves comuns
+        {
+            novaWave = new Wave(totalInimigos, "Wave " + currentWaveNumber, waves[4].typeOfEnemies, waves[4].boss, waves[4].spawnInterval);           
+            totalInimigos += 5;
+        }
         currentWave = novaWave;
-        totalInimigos += 5;
+
     }
     void OnBot()
     {
@@ -130,7 +138,7 @@ public class WaveSpawner : MonoBehaviour
             GameObject waveBoss = currentWave.boss;
             currentWave.numOfEnemies--;
             nextSpawnTime = Time.time + currentWave.spawnInterval;
-            if (currentWave.numOfEnemies == 1)
+            if (currentWave.numOfEnemies == 1 && waveBoss != null)
             {
                 Instantiate(waveBoss, randomSpawnPoint, Quaternion.identity);
                 currentWave.numOfEnemies--;

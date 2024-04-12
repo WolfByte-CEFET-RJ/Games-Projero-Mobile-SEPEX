@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3da77dc5e899d4d8dedaaf994aef73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  win: 0
+  iniciarModoInfinito: 0
   waves:
   - waveName: Wave 1
     numOfEnemies: 11
@@ -1765,7 +1765,7 @@ MonoBehaviour:
     - {fileID: 8575146113668735279, guid: 0227a97cf67903f42bd707be76493e68, type: 3}
     boss: {fileID: 1450826777653584437, guid: dc76fb1c680649e4ab82cc09b7e0bd75, type: 3}
     spawnInterval: 0.7
-  - waveName: Final Wave
+  - waveName: Wave 5
     numOfEnemies: 51
     typeOfEnemies:
     - {fileID: 5626236865653759281, guid: 22f363285a4cc784dbc9683a9e62d68e, type: 3}
@@ -1779,7 +1779,7 @@ MonoBehaviour:
     - {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
     - {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
     - {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
-    boss: {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
+    boss: {fileID: 0}
     spawnInterval: 0.3
   botao: {fileID: 1318468723}
   timer: {fileID: 1542388318}
