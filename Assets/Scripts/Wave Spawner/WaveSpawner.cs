@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 [System.Serializable]
 public class Wave
 {
@@ -41,6 +42,9 @@ public class WaveSpawner : MonoBehaviour
 
     private int totalInimigos;
     private bool controleNovaWave;
+
+    [SerializeField] private Text startWaveText;
+    [SerializeField] private Text difficultyText;
     private void Start()
     {
         playerLife = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
@@ -89,6 +93,7 @@ public class WaveSpawner : MonoBehaviour
     {
         if (t == 0)
         {
+            UpdateStartWaveText();
             botao.SetActive(true);
             playerLife.ResetLife();//Recuperar vida automaticamente
             anim.Play("ShopEnter");
@@ -157,6 +162,30 @@ public class WaveSpawner : MonoBehaviour
 
     }
     
-    
+    private void UpdateStartWaveText()
+    {
+        startWaveText.text = "Começar wave " + (currentWaveNumber + 2);
+
+        if((currentWaveNumber + 2) % 6 == 0)
+        {
+            difficultyText.text = "Dificuldade: Chefão"; 
+        }
+        else if(currentWaveNumber + 2 <= 3)
+        {
+            difficultyText.text = "Dificuldade: Fácil";
+        }
+        else if (currentWaveNumber + 2 <= 5)
+        {
+            difficultyText.text = "Dificuldade: Médio";
+        }
+        else if (currentWaveNumber + 2 <= 9)
+        {
+            difficultyText.text = "Dificuldade: Difícil";
+        }
+        else
+        {
+            difficultyText.text = "Dificuldade: Meus pêsames";
+        }
+    }
 
 }
