@@ -10,6 +10,7 @@ public class Flip_Life : LifeSystem
     // Start is called before the first frame update
     public void Start()
     {
+        AudioManager.main.changeBgm(AudioManager.main.flipMusic);
         health.SetMaxHealth(maxLife);
     }
     public override void OnDamage(int dmg)
@@ -24,6 +25,7 @@ public class Flip_Life : LifeSystem
         }
         if (currentLife <= 0)
         {
+            AudioManager.main.changeBgm(AudioManager.main.musicGame);
             Destroy(gameObject);
         }
 

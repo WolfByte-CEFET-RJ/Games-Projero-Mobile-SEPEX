@@ -13,9 +13,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource backgroundMusic;
     [SerializeField] AudioSource soundFX;
     [Header("Audio Clips")]
-    [Header("\tGame and Menu musics")]
+    [Header("\tGame, Menu and other musics")]
     public AudioClip musicGame;
     public AudioClip musicMenu;
+    public AudioClip flipMusic;
     [Header("\tHit effects")]
     public AudioClip hitOnPlayer;
     public AudioClip hitOnEnemy;
@@ -74,7 +75,11 @@ public class AudioManager : MonoBehaviour
         else
             return 3;
     }
-
+    public void changeBgm(AudioClip aud) //Funcao para mudar a musica de fundo após o metodo Start
+    {
+        backgroundMusic.clip = aud;
+        backgroundMusic.Play();
+    }
     public void PlaySFX(AudioClip _clip) {  //Rodrigo --> função que recebe uma das variáveis com clips de áudio e toca uma vez (SFX)
         soundFX.PlayOneShot(_clip);
     }

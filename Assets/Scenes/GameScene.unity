@@ -10402,6 +10402,7 @@ MonoBehaviour:
   soundFX: {fileID: 1096636672}
   musicGame: {fileID: 8300000, guid: 86844bf2201e243449471191d0fe2034, type: 3}
   musicMenu: {fileID: 8300000, guid: 67b70bbe5af5ddd42a0fd7c0706e02cd, type: 3}
+  flipMusic: {fileID: 8300000, guid: ff3e4f80558e0474f98e40e0d2c76da5, type: 3}
   hitOnPlayer: {fileID: 8300000, guid: 6b4764212e3ebe4419c033edcdec7667, type: 3}
   hitOnEnemy: {fileID: 8300000, guid: 11fff18db3b03aa468dfb695b328b1fa, type: 3}
   menuBtnIn: {fileID: 8300000, guid: 263a15d62203a4642b721c8678f234d8, type: 3}
