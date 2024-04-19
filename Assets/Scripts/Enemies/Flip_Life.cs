@@ -6,11 +6,14 @@ public class Flip_Life : LifeSystem
 {
     [Header("FlipSettings")]
     [SerializeField] private GameObject damageText;
-    [SerializeField] private HealthBarFlip health;
+    [SerializeField] private GameObject healthObj;
+    private HealthBarFlip health;
     // Start is called before the first frame update
     public void Start()
     {
         AudioManager.main.changeBgm(AudioManager.main.flipMusic);
+        health = healthObj.GetComponent<HealthBarFlip>();
+        health.ActiveBar();
         health.SetMaxHealth(maxLife);
     }
     public override void OnDamage(int dmg)

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LifeSystem : MonoBehaviour//Com certeza esse script nao foi feito seguindo as melhores praticas(dava pra isso tranquilamente ser
-//um script pai e 3 filhos), mas como estamos com o tempo apertado, vou tentar refazer ele apenas se sobrar tempo das outras tarefas.
+public class LifeSystem : MonoBehaviour
 {
     [SerializeField] protected int currentLife;
     protected int maxLife;
 
-    void Start()
+    void Awake()
     {
         maxLife = currentLife;
     }

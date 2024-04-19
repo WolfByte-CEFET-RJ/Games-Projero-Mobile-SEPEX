@@ -10,8 +10,10 @@ public class HealthBarFlip : MonoBehaviour
 
     public void Start()
     {
-        HealthBar.SetActive(false);
+       // HealthBar.SetActive(false);
+        
     }
+    /*
     public void Update()
     {
         if (flip.activeInHierarchy)
@@ -19,14 +21,20 @@ public class HealthBarFlip : MonoBehaviour
             HealthBar.SetActive(true);
         }
     }
-
+    */
+    public void ActiveBar()
+    {
+        HealthBar.SetActive(true);
+    }
     public void SetMaxHealth(int health)
     {
+        Debug.Log("Vida setada");
         slider.maxValue = health;
         slider.value = health;
     }
     public void SetHealth(int health)
-        {
+    {
+        Debug.Log("Vida decrescida");
         slider.value = health;
-        }
+    }
 }

@@ -1777,8 +1777,6 @@ MonoBehaviour:
     numOfEnemies: 1
     typeOfEnemies:
     - {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
-    - {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
-    - {fileID: 2609451587874554212, guid: 3259bd14c0210c746bd17e1d55ca5534, type: 3}
     boss: {fileID: 0}
     spawnInterval: 0.3
   botao: {fileID: 1318468723}
