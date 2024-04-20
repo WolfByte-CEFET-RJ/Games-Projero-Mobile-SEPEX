@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player;
-    
+    [SerializeField] private Transform player;
+
+    public void setPlayerTransf(Transform t)
+    {
+        player = t;
+    }
     public void FixedUpdate()
     {
         if(player)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollow : EnemyFather//Classe pai responsavel por dar dano ao encostar
+public class EnemyFollow : MonoBehaviour
 {
     public float Speed;
     private float initialSpeed;

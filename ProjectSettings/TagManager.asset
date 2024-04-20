@@ -16,6 +16,7 @@ TagManager:
   - Slot 1
   - Slot 2
   - Slot 3
+  - CameraPivot
   layers:
   - Default
   - TransparentFX

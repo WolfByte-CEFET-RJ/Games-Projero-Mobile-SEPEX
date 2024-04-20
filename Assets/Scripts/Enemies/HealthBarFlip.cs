@@ -28,13 +28,11 @@ public class HealthBarFlip : MonoBehaviour
     }
     public void SetMaxHealth(int health)
     {
-        Debug.Log("Vida setada");
         slider.maxValue = health;
         slider.value = health;
     }
     public void SetHealth(int health)
     {
-        Debug.Log("Vida decrescida");
         slider.value = health;
     }
 }
