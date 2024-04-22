@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class FlipAttack : MonoBehaviour
 {
-    
+    private Animator anim;
     public IAttackStrategy attackSelected;//Aqui vao uma das 3 opcoes de ataque: Sonic, Bomba patch e Bears Garden, ambos
     //Implementando essa interface
     
 
     void Start()
     {
-       
+        anim = GetComponent<Animator>();
         choiseAttack();
     }
     
@@ -30,6 +30,7 @@ public class FlipAttack : MonoBehaviour
                 attackSelected = gameObject.AddComponent<BombaPatchStrategy>();
                 break;
         }
+        anim.SetInteger("jogoAtaque", attackChoise);
         Debug.Log("Ataque " + attackChoise);
     }
 }

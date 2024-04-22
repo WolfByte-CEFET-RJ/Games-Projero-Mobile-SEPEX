@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe7435e45eb81a48bbcd6e0d9599622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLife: 200
+  currentLife: 250
   damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
   healthObj: {fileID: 5966891246292218110}
 --- !u!61 &3250071345527377887
@@ -151,11 +151,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2833318623770892498, guid: ebe869fd1f11c424d8185f2cd24b412d, type: 3}
       propertyPath: m_Size.x
-      value: 10
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 2833318623770892498, guid: ebe869fd1f11c424d8185f2cd24b412d, type: 3}
       propertyPath: m_Size.y
-      value: 10
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833318623770892498, guid: ebe869fd1f11c424d8185f2cd24b412d, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027659029252143918, guid: ebe869fd1f11c424d8185f2cd24b412d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4447620103621089199, guid: ebe869fd1f11c424d8185f2cd24b412d, type: 3}
       propertyPath: m_AnchorMax.x
