@@ -6,15 +6,30 @@ public class FlipAttack : MonoBehaviour
 {
     private Animator anim;
     public IAttackStrategy attackSelected;//Aqui vao uma das 3 opcoes de ataque: Sonic, Bomba patch e Bears Garden, ambos
-    //Implementando essa interface
-    
+                                          //Implementando essa interface
 
+    [SerializeField] private float frequenciaAtaque;
+    private float cronometer;
+
+    [Header("BearGardenSettings")]
+    [SerializeField] private GameObject[] batatas;
+
+    public GameObject[] getBatatas() { return batatas; }
     void Start()
     {
         anim = GetComponent<Animator>();
         choiseAttack();
+        cronometer = -10;//Comeca negativo assim para que possa dar tempo da cutscene ser executada antes do primeiro ataque
     }
-    
+    private void Update()
+    {
+        cronometer += Time.deltaTime;
+        if(cronometer >= frequenciaAtaque)
+        {
+            attackSelected.chargeAttack();//Essa funcao ira carregar e executar o ataque selecionado
+            cronometer = 0;
+        }
+    }
 
     private void choiseAttack()
     {

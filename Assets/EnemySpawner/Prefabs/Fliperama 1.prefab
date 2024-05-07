@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3250071345527377860}
   - component: {fileID: 3250071345527377886}
   - component: {fileID: 3250071345527377881}
-  - component: {fileID: 3250071345527377887}
+  - component: {fileID: 4423510465509974381}
+  - component: {fileID: 8164072046148683750}
   m_Layer: 0
   m_Name: Fliperama 1
   m_TagString: Enemy
@@ -72,6 +73,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSelected: {fileID: 0}
+  frequenciaAtaque: 5
+  batatas:
+  - {fileID: 3730179924340375546, guid: c45d67e514438e24290dce72d27d9690, type: 3}
+  - {fileID: 3730179924340375546, guid: af752632450dab745b00c7f0d1f671f2, type: 3}
+  - {fileID: 3730179924340375546, guid: 907507ae09ae7fe45a4870ca49aa85ff, type: 3}
+  - {fileID: 3730179924340375546, guid: 2f8f7fee58be65740a629a25f96f29c9, type: 3}
 --- !u!114 &3250071345527377860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,8 +119,8 @@ MonoBehaviour:
   currentLife: 250
   damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
   healthObj: {fileID: 5966891246292218110}
---- !u!61 &3250071345527377887
-BoxCollider2D:
+--- !u!70 &4423510465509974381
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -125,19 +132,22 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.28667212, y: -0.12740993}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.542325, y: 9.409046}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.120807886, y: -0.060403347}
+  m_Size: {x: 6.0571666, y: 9.657903}
+  m_Direction: 0
+--- !u!114 &8164072046148683750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3250071345527377863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb7bb31d0e447a42ba94895a52fbbfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
 --- !u!1001 &3250071344654732978
 PrefabInstance:
   m_ObjectHideFlags: 0
