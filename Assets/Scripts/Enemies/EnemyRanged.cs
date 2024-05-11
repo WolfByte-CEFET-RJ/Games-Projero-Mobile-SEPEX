@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRepeating, usando o radius e o metodo Distance
 {
-    private Transform playerPos;
+    protected Transform playerPos;
 
-    private EnemyFollow move;
-    private Animator anim;
+    protected EnemyFollow move;
+    protected Animator anim;
 
-    [SerializeField] private GameObject targetObj;
+    [SerializeField] protected GameObject targetObj;
 
-    [SerializeField] private GameObject bullet;
+    [SerializeField] protected GameObject bullet;
 
-    private bool onAttack;
-    private bool cancelAttack;
+    protected bool onAttack;
+    protected bool cancelAttack;
     [SerializeField] private float radius;
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
         move = GetComponent<EnemyFollow>();
@@ -46,7 +46,7 @@ public class EnemyRanged : EnemyFather//Lembrar de mudar a logica para invokeRep
     //        onAttack = false;
     //    }
     //}
-    IEnumerator Attack()
+    protected virtual IEnumerator Attack()
     {
         onAttack = true;
         cancelAttack = false;
