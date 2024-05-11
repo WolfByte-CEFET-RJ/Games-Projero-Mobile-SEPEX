@@ -23,9 +23,22 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        changeRotation();
         if (Target && !onDamage)
             transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
         else if (Target && onDamage)
             transform.position = Vector2.MoveTowards(transform.position, Target.position, -Speed * 1.2f * Time.deltaTime);
+    }
+
+    void changeRotation()
+    {
+        if(Target.position.x > transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
     }
 }

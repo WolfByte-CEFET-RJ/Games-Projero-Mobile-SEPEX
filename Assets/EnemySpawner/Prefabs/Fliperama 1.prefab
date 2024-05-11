@@ -75,10 +75,10 @@ MonoBehaviour:
   attackSelected: {fileID: 0}
   frequenciaAtaque: 5
   batatas:
-  - {fileID: 3730179924340375546, guid: c45d67e514438e24290dce72d27d9690, type: 3}
-  - {fileID: 3730179924340375546, guid: af752632450dab745b00c7f0d1f671f2, type: 3}
-  - {fileID: 3730179924340375546, guid: 907507ae09ae7fe45a4870ca49aa85ff, type: 3}
-  - {fileID: 3730179924340375546, guid: 2f8f7fee58be65740a629a25f96f29c9, type: 3}
+  - {fileID: 258964112547716907, guid: 447d1587965b0d44b9e6e07bec4eefb8, type: 3}
+  - {fileID: 258964112547716907, guid: 5851b5bf2723e2b409abfc9396ff1d2b, type: 3}
+  - {fileID: 258964112547716907, guid: 94c70a6b4b98ef04e95f35592900b6f9, type: 3}
+  - {fileID: 258964112547716907, guid: 711f46aff140f55469e6510b3587702b, type: 3}
 --- !u!114 &3250071345527377860
 MonoBehaviour:
   m_ObjectHideFlags: 0
