@@ -23,11 +23,15 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        changeRotation();
-        if (Target && !onDamage)
-            transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
-        else if (Target && onDamage)
-            transform.position = Vector2.MoveTowards(transform.position, Target.position, -Speed * 1.2f * Time.deltaTime);
+        if(Target)
+        {
+            changeRotation();
+            if (!onDamage)
+                transform.position = Vector2.MoveTowards(transform.position, Target.position, Speed * Time.deltaTime);
+            else
+                transform.position = Vector2.MoveTowards(transform.position, Target.position, -Speed * 1.2f * Time.deltaTime);
+        }
+        
     }
 
     void changeRotation()

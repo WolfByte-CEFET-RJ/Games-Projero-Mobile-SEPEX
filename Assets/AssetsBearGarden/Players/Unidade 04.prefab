@@ -533,8 +533,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   targetObj: {fileID: 2742874661646763812}
-  bullet: {fileID: 5908249954635091191, guid: ba9b202c1ed2dc34a97657bd5e1757af, type: 3}
-  radius: 5
+  bullet: {fileID: 538631749435101012, guid: 1c0b0592463cba3498dca309763b8ecd, type: 3}
+  radius: 7
   isRanged: 0
 --- !u!1 &3730179925075588029
 GameObject:

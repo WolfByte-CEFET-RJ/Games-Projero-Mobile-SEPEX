@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d8a02533d90284187b254ff488191e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLife: 5
+  currentLife: 20
   coin: {fileID: 3561760817714756291, guid: c4f804f9931be9942b8e6cd70e3233bd, type: 3}
   damageText: {fileID: 4307528285249795943, guid: b2e55bf11edb1aa4496fe5bdad9e3b32, type: 3}
 --- !u!114 &635980346855557157
@@ -531,11 +531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e1557bab1e99449921ef7c4a2e09bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0
   targetObj: {fileID: 2519794430527988364}
-  bullet: {fileID: 5908249954635091191, guid: ba9b202c1ed2dc34a97657bd5e1757af, type: 3}
-  radius: 5
-  isRanged: 0
+  bullet: {fileID: 0}
+  radius: 1.8
 --- !u!1 &3730179925075588029
 GameObject:
   m_ObjectHideFlags: 0
