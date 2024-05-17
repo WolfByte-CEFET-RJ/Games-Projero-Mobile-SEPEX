@@ -6,7 +6,6 @@ public class FlipCutscene : MonoBehaviour
 {
     private CameraFollow cam;
     private EnemyFollow enFollow;
-    private bool control;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,11 +29,7 @@ public class FlipCutscene : MonoBehaviour
     }
     public void startMovement()
     {
-        if (!control)
-        {
-            enFollow.Speed = enFollow.getInitialSpeed();
-            control = true;
-        }
-        
+        enFollow.Speed = enFollow.getInitialSpeed();
+  
     }
 }

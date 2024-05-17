@@ -14,7 +14,9 @@ public class FlipAttack : MonoBehaviour
     [Header("BearGardenSettings")]
     [SerializeField] private GameObject[] batatas;
 
-    public GameObject[] getBatatas() { return batatas; }
+    
+    [Header("BombaPatchSettings")]
+    [SerializeField] private GameObject ball;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -48,4 +50,10 @@ public class FlipAttack : MonoBehaviour
         anim.SetInteger("jogoAtaque", attackChoise);
         Debug.Log("Ataque " + attackChoise);
     }
+
+    #region Getters
+    public GameObject[] getBatatas() { return batatas; }
+    public GameObject getBall() { return ball; }
+    #endregion
+
 }

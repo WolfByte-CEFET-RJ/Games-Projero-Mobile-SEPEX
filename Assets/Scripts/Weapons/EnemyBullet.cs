@@ -7,6 +7,8 @@ public class EnemyBullet : MonoBehaviour
     private Vector3 target;
     private Rigidbody2D rig;
     [SerializeField] private float speed;
+
+    public void setSpeed(float s) { speed = s; }
     public void SetTarget(Vector3 tgt)
     {
         target = tgt;       
