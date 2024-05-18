@@ -6,8 +6,9 @@ public class BombaPatchStrategy : IAttackStrategy
 {
     private GameObject ball;//Aqui temos o prefab da bola
     private GameObject currentBall;//Ja aqui, temos a instancia atual da bola, que sera impulsionada e depois destruida
-    private float downgrade = 5;
+    private const float downgrade = 5;
     private Transform playerPos;
+    private Transform targetTransf;
     private FlipCutscene speed;
     public override void attack()
     {
@@ -15,14 +16,16 @@ public class BombaPatchStrategy : IAttackStrategy
         //currentBall.GetComponent<Rigidbody2D>().AddForce(direction * force, ForceMode2D.Impulse);
         //Destroy(currentBall, 10);
 
-        currentBall.AddComponent<EnemyBullet>();
-        currentBall.GetComponent<EnemyBullet>().SetTarget(playerPos.position);
-        currentBall.GetComponent<EnemyBullet>().setSpeed(400);
+        SoccerBall soc = currentBall.GetComponent<SoccerBall>();
+        soc.SetTarget(targetTransf.position);
+        soc.setSpeed(400);
     }
 
     public override void chargeAttack()
     {
         currentBall = Instantiate(ball, transform.position + (Vector3.down * downgrade), transform.rotation);
+        targetTransf = currentBall.GetComponent<SoccerBall>().getTargetTransf();
+        targetTransf.localScale = Vector3.one;
         StartCoroutine(controllSpeed());
     }
 
@@ -37,9 +40,16 @@ public class BombaPatchStrategy : IAttackStrategy
     IEnumerator controllSpeed()
     {
         speed.stopMovement();
-        yield return new WaitForSeconds(1.5f);
+        for(int i=0; i<10; i++)
+        {
+            targetTransf.position = playerPos.position;
+            yield return new WaitForSeconds(0.15f);
+        }
+        targetTransf.position = playerPos.position;
+        yield return new WaitForSeconds(0.3f);
         attack();
         speed.startMovement();
+        targetTransf.localScale = Vector3.zero;
 
     }
 }

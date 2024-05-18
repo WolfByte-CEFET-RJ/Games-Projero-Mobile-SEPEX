@@ -17,6 +17,8 @@ TagManager:
   - Slot 2
   - Slot 3
   - CameraPivot
+  - ParedeLateral
+  - ParedeVertical
   layers:
   - Default
   - TransparentFX

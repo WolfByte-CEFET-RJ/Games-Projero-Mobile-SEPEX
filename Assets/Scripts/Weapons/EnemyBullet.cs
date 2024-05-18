@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    private Vector3 target;
+    protected Vector3 target;
     private Rigidbody2D rig;
     [SerializeField] private float speed;
 
@@ -16,6 +16,7 @@ public class EnemyBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Destroy(gameObject, 10);
         rig = GetComponent<Rigidbody2D>();
     }
 
@@ -29,8 +30,7 @@ public class EnemyBullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player") && collision.gameObject.GetComponent<PlayerLife>())
         {
