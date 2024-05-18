@@ -10,18 +10,18 @@ public class QuadradoTutorial : MonoBehaviour
     public Sprite quadVerde;
     private SpriteRenderer spriteRenderer;
 
-    private void Start()
+    private void Start()//--> inicia o codigo pegando o sprite do GameObject Quadrado
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-    private void Update()
+    private void Update()//--> verifica se a quantidade de quadrados andados e igual a 4 para assim destruir os quadrados
     {
         if(tutorialManager.quadradosAndados== 4)
         {
             StartCoroutine(DestroyAfterDelay(1f));
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)//--> verifica se o Player ta entrando pela primeira vez no quadrado e aumenta o numero de quadradosAndados
     {
         if (!entrou && other.CompareTag("Player"))
         {
@@ -31,14 +31,14 @@ public class QuadradoTutorial : MonoBehaviour
             
         }
     }
-    private void MudarSprite()
+    private void MudarSprite()//--> muda o sprite do quadrado para verde, sinalizando que ele ja entrou nele
     {
         if (spriteRenderer != null && quadVerde != null)
         {
             spriteRenderer.sprite = quadVerde;
         }
     }
-    private IEnumerator DestroyAfterDelay(float delay)
+    private IEnumerator DestroyAfterDelay(float delay)//--> destroi depois de um delay
     {
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);

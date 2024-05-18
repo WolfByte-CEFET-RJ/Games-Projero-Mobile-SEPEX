@@ -8,7 +8,17 @@ public class MenusButtons : MonoBehaviour
 {
     [HideInInspector] public bool _podeIniciarJogo = true;
     public static MenusButtons main;
-
+    public int primeiraSessao;
+    private void Start()
+    {
+        primeiraSessao = PlayerPrefs.GetInt("PrimeiraSessao");
+        if (primeiraSessao != 1)
+        {
+            PlayerPrefs.SetInt("Tutorial", 1);
+            PlayerPrefs.SetInt("PrimeiraSessao", 1);
+        }
+        
+    }
     void Awake(){
         main = this;
     }
@@ -45,6 +55,12 @@ public class MenusButtons : MonoBehaviour
         //AudioManager.main.PlaySFX(btnIn);     Rodrigo
         //yield return new WaitForSeconds(2f);  Rodrigo
         SceneManager.LoadScene(nomeDaCena);
+    }
+    // Funcao de iniciar o jogo com o tutorial
+    public void TutorialBtn()
+    {
+        PlayerPrefs.SetInt("Tutorial", 1);
+        SceneManager.LoadScene("GameScene");
     }
 
     // Função de sair do jogo

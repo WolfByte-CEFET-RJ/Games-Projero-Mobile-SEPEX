@@ -64,4 +64,9 @@ public class PlayerCoin : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    public void CoinReset()//usado no caso de pular o tutorial no meio da explicacao dos inimigos
+    {
+        coins = 0;
+        coinText.text = "X " + coins.ToString();
+    }
 }

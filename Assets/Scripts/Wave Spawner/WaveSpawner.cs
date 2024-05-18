@@ -94,7 +94,7 @@ public class WaveSpawner : MonoBehaviour
         currentWave = novaWave;
 
     }
-    void OnBot()
+    protected void OnBot()
     {
         if (t == 0)
         {
