@@ -23,6 +23,7 @@ public class Wave
 public class WaveSpawner : MonoBehaviour
 {
     public bool iniciarModoInfinito = false;
+    public bool iniciarTutorial = true;
     public Wave[] waves;
     public GameObject botao, timer;
     public Timer x;
@@ -62,7 +63,11 @@ public class WaveSpawner : MonoBehaviour
                 controleNovaWave = true;
             }
         }
-        SpawnWave();
+        if (iniciarTutorial==false)
+        {
+            SpawnWave();
+        }
+        
         totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         totalWarnings = GameObject.FindGameObjectsWithTag("Warning");
         if (totalWarnings.Length == 0 && totalEnemies.Length == 0 && !canSpawn /*&& currentWaveNumber + 1 != waves.Length*/)
@@ -164,6 +169,7 @@ public class WaveSpawner : MonoBehaviour
     
     private void UpdateStartWaveText()
     {
+
         startWaveText.text = "Começar wave " + (currentWaveNumber + 2);
 
         if((currentWaveNumber + 2) % 6 == 0)
@@ -186,6 +192,10 @@ public class WaveSpawner : MonoBehaviour
         {
             difficultyText.text = "Dificuldade: Meus pêsames";
         }
+    }
+    public void PodeSpawnarTutorial()
+    {
+        iniciarTutorial = false;
     }
 
 }
