@@ -10,26 +10,34 @@ public class SoccerBall : EnemyBullet
 
     private void LateUpdate()
     {
-        target = targetTransf.position;
+        target = targetTransf.position;//Atualizando a cada momento nosso target (ja que a bola nao segue uma posicao fixa)
     }
 
-    protected override void OnTriggerEnter2D(Collider2D collision)//Me lembrem de documentar bonitinho dps
-    {//Ate pq agora nao ta 100% funcional. Vou ver ainda como posso corrigir
-        base.OnTriggerEnter2D(collision);//O que posso falar agora e que abaixo seria a logica do quique da bola na parede
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        base.OnTriggerEnter2D(collision);
+        /*
+            Aqui, a logica da bola eh basicamente inverter a sua direcao quando bate na parede
 
-        if(collision.CompareTag("ParedeLateral"))
+            isso porque o alvo que a bola segue eh um objeto filho da propria bola, ou seja, onde a bola vai, o proprio alvo vai tambem. Como
+        se fosse, no minecraft, montar no porco com uma cenoura na vara
+
+            Sabendo disso, conseguimos reverter a direcao da bola do seguinte modo:
+
+            Se eh uma parede dos lados, a gente apenas inverte a posicao x do alvo. Ou seja, se o alvo esta a direita da bola, ao tocar numa
+        parede lateral, vai se tornar um alvo a esquerda da bola
+
+            Se eh uma parede de cima/baixo, uma logica parecida, mas invertendo a posicao y
+        */
+        if (collision.CompareTag("ParedeLateral"))
         {
-            if (transform.rotation.y == 0)
-                transform.eulerAngles = new Vector3(0, 180, 0);
-            else
-                transform.eulerAngles = new Vector3(0, 0, 0);
+            float newPosX = targetTransf.localPosition.x * -1;
+            targetTransf.localPosition = new Vector3(newPosX, targetTransf.localPosition.y, targetTransf.localPosition.z);
         }
         if(collision.CompareTag("ParedeVertical"))
         {
-            if (transform.rotation.z == 0)
-                transform.eulerAngles = new Vector3(0, 0, 180);
-            else
-                transform.eulerAngles = new Vector3(0, 0, 0);
+            float newPosY = targetTransf.localPosition.y * -1;
+            targetTransf.localPosition = new Vector3(targetTransf.localPosition.x, newPosY, targetTransf.localPosition.z);
         }
 
     }

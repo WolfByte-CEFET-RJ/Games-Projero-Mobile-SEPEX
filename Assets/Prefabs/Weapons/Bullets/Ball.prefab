@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2836749670790899684}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 649b91ae802b8a14d9f790a22ae1f85f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ed7b618cfbeba4ebae24cf957c94dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
   targetTransf: {fileID: 2305381608687008865}
 --- !u!1 &4973493881364296801
 GameObject:
