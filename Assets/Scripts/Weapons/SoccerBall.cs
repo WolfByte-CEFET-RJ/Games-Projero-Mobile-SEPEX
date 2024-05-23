@@ -31,11 +31,13 @@ public class SoccerBall : EnemyBullet
         */
         if (collision.CompareTag("ParedeLateral"))
         {
+            AudioManager.main.PlaySFX(AudioManager.main.hitBallWallSfx);
             float newPosX = targetTransf.localPosition.x * -1;
             targetTransf.localPosition = new Vector3(newPosX, targetTransf.localPosition.y, targetTransf.localPosition.z);
         }
         if(collision.CompareTag("ParedeVertical"))
         {
+            AudioManager.main.PlaySFX(AudioManager.main.hitBallWallSfx);
             float newPosY = targetTransf.localPosition.y * -1;
             targetTransf.localPosition = new Vector3(targetTransf.localPosition.x, newPosY, targetTransf.localPosition.z);
         }

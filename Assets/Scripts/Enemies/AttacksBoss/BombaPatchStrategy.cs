@@ -15,7 +15,7 @@ public class BombaPatchStrategy : IAttackStrategy
         //Vector3 direction = playerPos.position - transform.position;
         //currentBall.GetComponent<Rigidbody2D>().AddForce(direction * force, ForceMode2D.Impulse);
         //Destroy(currentBall, 10);
-
+        AudioManager.main.PlaySFX(AudioManager.main.kickBallSfx);
         SoccerBall soc = currentBall.GetComponent<SoccerBall>();
         soc.SetTarget(targetTransf.position);
         soc.setSpeed(400);
@@ -43,6 +43,7 @@ public class BombaPatchStrategy : IAttackStrategy
         for(int i=0; i<10; i++)
         {
             targetTransf.position = playerPos.position;
+            AudioManager.main.PlaySFX(AudioManager.main.aimBallSfx);
             yield return new WaitForSeconds(0.15f);
         }
         targetTransf.position = playerPos.position;

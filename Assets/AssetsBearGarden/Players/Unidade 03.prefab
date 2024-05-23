@@ -569,7 +569,7 @@ MonoBehaviour:
   targetObj: {fileID: 1979400717712195298}
   bullet: {fileID: 538631749435101012, guid: 8d307eb7f732f1f45986721ebe6d140c, type: 3}
   radius: 5
-  isRanged: 0
+  attackSfx: {fileID: 8300000, guid: b3944430cd9530c4dbcccd5f47bf9c0b, type: 3}
 --- !u!1 &3730179925075588029
 GameObject:
   m_ObjectHideFlags: 0

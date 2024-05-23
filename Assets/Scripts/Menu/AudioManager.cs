@@ -29,6 +29,12 @@ public class AudioManager : MonoBehaviour
     [Header("\tTimer effects")]
     public AudioClip timerSfx;
     public AudioClip timerFinalSfx;
+    [Header("\tBear Garden Effects")]
+    public AudioClip spawnSfx;
+    [Header("\tBomba Patch effects")]
+    public AudioClip aimBallSfx;
+    public AudioClip kickBallSfx;
+    public AudioClip hitBallWallSfx;
     [Header("Audio Mixer")]
     [SerializeField] AudioMixer myMixer;
 
@@ -83,7 +89,10 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip _clip) {  //Rodrigo --> função que recebe uma das variáveis com clips de áudio e toca uma vez (SFX)
         soundFX.PlayOneShot(_clip);
     }
-
+    public void StopAudio()
+    {
+        soundFX.Stop();
+    }
     void Load(int _estado) //Rodrigo --> função para inserir os valores previamente salvos pelo jogador
     {
         switch(_estado){    //_estado = 1 (música)  _estado = 2 (sfx)

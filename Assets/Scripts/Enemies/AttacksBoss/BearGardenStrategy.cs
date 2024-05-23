@@ -19,6 +19,7 @@ public class BearGardenStrategy : IAttackStrategy
     public override void chargeAttack()
     {
         //Possivel animacao de carga
+        AudioManager.main.PlaySFX(AudioManager.main.spawnSfx);
         attack();
     }
 

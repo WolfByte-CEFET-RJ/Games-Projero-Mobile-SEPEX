@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackHeroBearGarden : EnemyRanged
 {
+    [SerializeField] private AudioClip attackSfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class AttackHeroBearGarden : EnemyRanged
 
     protected override IEnumerator Attack()
     {
-
+        AudioManager.main.PlaySFX(attackSfx);
         onAttack = true;
         cancelAttack = false;
         anim.SetTrigger("atk");//É apenas por essa linha que tive que sobrescrever o metodo para as tropas ranged. (Quase)Todo o resto irá funcionar igualmente
@@ -27,6 +28,7 @@ public class AttackHeroBearGarden : EnemyRanged
             yield return new WaitForSeconds(0.1f);
             if (move.GetOnDamage())
             {
+                AudioManager.main.StopAudio();
                 targetObj.SetActive(false);
                 move.Speed = move.getInitialSpeed();
                 cancelAttack = true;
@@ -48,7 +50,8 @@ public class AttackHeroBearGarden : EnemyRanged
 
         targetObj.SetActive(false);
         move.Speed = move.getInitialSpeed();
+        
+        yield return new WaitForSeconds(0.5f);
         onAttack = false;
-        yield return new WaitForSeconds(0.2f);
     }
 }
