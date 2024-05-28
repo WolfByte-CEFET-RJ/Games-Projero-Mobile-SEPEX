@@ -80,6 +80,7 @@ MonoBehaviour:
   - {fileID: 258964112547716907, guid: 94c70a6b4b98ef04e95f35592900b6f9, type: 3}
   - {fileID: 258964112547716907, guid: 711f46aff140f55469e6510b3587702b, type: 3}
   ball: {fileID: 2532813103228539933, guid: 8fdcaa8bf07dbe746a7a7089ba75cca0, type: 3}
+  spinDashObj: {fileID: 5976564731577827063, guid: cd06e21892b34e8438aaa80bff400496, type: 3}
 --- !u!114 &3250071345527377860
 MonoBehaviour:
   m_ObjectHideFlags: 0

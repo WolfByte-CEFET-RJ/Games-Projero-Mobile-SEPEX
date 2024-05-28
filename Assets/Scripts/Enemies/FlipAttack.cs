@@ -17,11 +17,14 @@ public class FlipAttack : MonoBehaviour
     
     [Header("BombaPatchSettings")]
     [SerializeField] private GameObject ball;
+
+    [Header("SonicSettings")]
+    [SerializeField] private GameObject spinDashObj;
     void Start()
     {
         anim = GetComponent<Animator>();
         choiseAttack();
-        cronometer = -10;//Comeca negativo assim para que possa dar tempo da cutscene ser executada antes do primeiro ataque
+        cronometer = -8;//Comeca negativo assim para que possa dar tempo da cutscene ser executada antes do primeiro ataque
     }
     private void Update()
     {
@@ -54,6 +57,8 @@ public class FlipAttack : MonoBehaviour
     #region Getters
     public GameObject[] getBatatas() { return batatas; }
     public GameObject getBall() { return ball; }
+
+    public GameObject getSpinDash() { return spinDashObj; }
     #endregion
 
 }
