@@ -12,29 +12,38 @@ public class AudioManager : MonoBehaviour
     [Header("Audio Source")]
     [SerializeField] AudioSource backgroundMusic;
     [SerializeField] AudioSource soundFX;
+
     [Header("Audio Clips")]
     [Header("\tGame, Menu and other musics")]
     public AudioClip musicGame;
     public AudioClip musicMenu;
     public AudioClip flipMusic;
+    public AudioClip[] flipGamesMusic;/*Quando a musica do Bomba Patch ficar pronta, adiciona-la ao elemento 2 desse array*/
+
     [Header("\tHit effects")]
     public AudioClip hitOnPlayer;
     public AudioClip hitOnEnemy;
+
     [Header("\tMenu effects")]
     public AudioClip menuBtnIn;
     public AudioClip menuBtnOut;
+
     [Header("\tShop effects")]
     public AudioClip[] upgradesSfx;
     public AudioClip errorSfx;
+
     [Header("\tTimer effects")]
     public AudioClip timerSfx;
     public AudioClip timerFinalSfx;
+
     [Header("\tBear Garden Effects")]
     public AudioClip spawnSfx;
+
     [Header("\tBomba Patch effects")]
     public AudioClip aimBallSfx;
     public AudioClip kickBallSfx;
     public AudioClip hitBallWallSfx;
+
     [Header("Audio Mixer")]
     [SerializeField] AudioMixer myMixer;
 

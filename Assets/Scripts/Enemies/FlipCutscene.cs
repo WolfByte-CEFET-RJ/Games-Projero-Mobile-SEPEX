@@ -30,6 +30,18 @@ public class FlipCutscene : MonoBehaviour
     public void startMovement()
     {
         enFollow.Speed = enFollow.getInitialSpeed();
-  
+        int gameChosen = GetComponent<Animator>().GetInteger("jogoAtaque");
+        AudioManager.main.changeBgm(AudioManager.main.flipGamesMusic[gameChosen]);
+    }
+
+    public void ChangeBgmOnDeathCutscene(AudioClip music)//Esses 2 ultimos metodos tambem sao de AnimationEvent. Serao na animacao Death
+    {
+        AudioManager.main.changeBgm(music);
+    }
+    public void DestroyFlip(AudioClip music)
+    {
+        GetComponent<FlipAttack>().SetCanAttack(false);
+        AudioManager.main.changeBgm(music);
+        Destroy(gameObject);
     }
 }

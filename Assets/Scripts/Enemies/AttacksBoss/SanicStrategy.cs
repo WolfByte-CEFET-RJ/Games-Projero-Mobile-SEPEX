@@ -10,6 +10,8 @@ public class SanicStrategy : IAttackStrategy
 
     private bool onAtack;
     public bool getOnAtack() { return onAtack; }
+
+    private const float boostSpeed = 3.5f;
     public override void attack()
     {
         StartCoroutine(attackLogic());
@@ -18,7 +20,7 @@ public class SanicStrategy : IAttackStrategy
     public override void chargeAttack()
     {
         enFollow.Speed = 0;
-        currentSpinDash.SetActive(true);
+        
         attack();
     }
 
@@ -33,8 +35,10 @@ public class SanicStrategy : IAttackStrategy
     }
     IEnumerator attackLogic()
     {
-        yield return new WaitForSeconds(1.5f);
-        enFollow.Speed = enFollow.getInitialSpeed() * 4;
+        yield return new WaitForSeconds(0.5f);
+        currentSpinDash.SetActive(true);
+        yield return new WaitForSeconds(1);
+        enFollow.Speed = enFollow.getInitialSpeed() * boostSpeed;
         onAtack = true;
         yield return new WaitForSeconds(1.5f);
         StopBoss();//Parar o boss quando nao encosta no player apos um tempo

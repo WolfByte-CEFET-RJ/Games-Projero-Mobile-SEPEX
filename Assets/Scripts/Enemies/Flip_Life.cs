@@ -28,9 +28,11 @@ public class Flip_Life : LifeSystem
         }
         if (currentLife <= 0)
         {
-            AudioManager.main.changeBgm(AudioManager.main.musicGame);
-            Destroy(gameObject);
+            //AudioManager.main.changeBgm(AudioManager.main.musicGame);
+            //Destroy(gameObject);
+            GetComponent<Animator>().SetTrigger("death");//Chama animacao de morte, que vai fazer a troca de sprites e troca de musicas
         }
 
     }
+
 }

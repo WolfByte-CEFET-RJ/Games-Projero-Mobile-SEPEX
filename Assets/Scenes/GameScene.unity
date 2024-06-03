@@ -11730,6 +11730,10 @@ MonoBehaviour:
   musicGame: {fileID: 8300000, guid: 86844bf2201e243449471191d0fe2034, type: 3}
   musicMenu: {fileID: 8300000, guid: 67b70bbe5af5ddd42a0fd7c0706e02cd, type: 3}
   flipMusic: {fileID: 8300000, guid: ff3e4f80558e0474f98e40e0d2c76da5, type: 3}
+  flipGamesMusic:
+  - {fileID: 8300000, guid: 28fc768f00d366f4bb84cc33281e09fb, type: 3}
+  - {fileID: 8300000, guid: 845ba83423c92854b9ff68a246c96371, type: 3}
+  - {fileID: 8300000, guid: da41234ed36e1c243b18fb0d3a9cbfa3, type: 3}
   hitOnPlayer: {fileID: 8300000, guid: 6b4764212e3ebe4419c033edcdec7667, type: 3}
   hitOnEnemy: {fileID: 8300000, guid: 11fff18db3b03aa468dfb695b328b1fa, type: 3}
   menuBtnIn: {fileID: 8300000, guid: 263a15d62203a4642b721c8678f234d8, type: 3}

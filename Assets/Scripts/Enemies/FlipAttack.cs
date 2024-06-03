@@ -20,6 +20,9 @@ public class FlipAttack : MonoBehaviour
 
     [Header("SonicSettings")]
     [SerializeField] private GameObject spinDashObj;
+
+    private bool canAttack = true;
+    public void SetCanAttack(bool b) { canAttack = b; }
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -28,12 +31,15 @@ public class FlipAttack : MonoBehaviour
     }
     private void Update()
     {
-        cronometer += Time.deltaTime;
-        if(cronometer >= frequenciaAtaque)
+        if(canAttack)
         {
-            attackSelected.chargeAttack();//Essa funcao ira carregar e executar o ataque selecionado
-            cronometer = 0;
-        }
+            cronometer += Time.deltaTime;
+            if (cronometer >= frequenciaAtaque)
+            {
+                attackSelected.chargeAttack();//Essa funcao ira carregar e executar o ataque selecionado
+                cronometer = 0;
+            }
+        }      
     }
 
     private void choiseAttack()
