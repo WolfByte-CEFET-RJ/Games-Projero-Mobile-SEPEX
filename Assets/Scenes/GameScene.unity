@@ -11745,7 +11745,7 @@ MonoBehaviour:
   timerFinalSfx: {fileID: 8300000, guid: 56405e4a6dcc189488a87b815cebaeb2, type: 3}
   spawnSfx: {fileID: 8300000, guid: 96289f44b91602a43baf2255551aa7fc, type: 3}
   aimBallSfx: {fileID: 8300000, guid: 6e29ed7e9ee6e2c49bf8fb3d4aa68da2, type: 3}
-  kickBallSfx: {fileID: 8300000, guid: 6feb3e0e2e3588846b8910bf72a045e1, type: 3}
+  kickBallSfx: {fileID: 8300000, guid: cd8f4c01be430014492a193495aca6b0, type: 3}
   hitBallWallSfx: {fileID: 8300000, guid: 3d165e723843f8d45bbf4f8b4436fbd7, type: 3}
   myMixer: {fileID: 24100000, guid: 15a61bafec91ac64f8ca7df1e50b576a, type: 2}
 --- !u!4 &1373477368
