@@ -25,6 +25,7 @@ public class QuadradoTutorial : MonoBehaviour
     {
         if (!entrou && other.CompareTag("Player"))
         {
+            AudioManager.main.PlaySFX(AudioManager.main.menuBtnIn);
             tutorialManager.IncrementaQuadrado();
             entrou = true;
             MudarSprite();

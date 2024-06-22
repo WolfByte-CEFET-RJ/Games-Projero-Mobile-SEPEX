@@ -36,6 +36,7 @@ public class TextPopUp : MonoBehaviour
         foreach(char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
+            AudioManager.main.PlaySFX(AudioManager.main.typeSound);
             yield return new WaitForSeconds(textSpeed);
         }
         isTyping = false;

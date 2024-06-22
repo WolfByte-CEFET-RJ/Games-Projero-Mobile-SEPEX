@@ -44,6 +44,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip kickBallSfx;
     public AudioClip hitBallWallSfx;
 
+    [Header("Tutorial")]
+    public AudioClip typeSound;
     [Header("Audio Mixer")]
     [SerializeField] AudioMixer myMixer;
 

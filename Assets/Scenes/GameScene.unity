@@ -3285,11 +3285,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1904878349}
   lines:
-  - 'Agora elimine 10 inimigos para continuar para o jogo. O seu ataque acontece
-    de forma automatica!                                                             '
+  - "Agora elimine 10 inimigos para continuar o jogo. O seu ataque acontece de forma
+    autom\xE1tica!                                                             "
   - "Tome cuidado para n\xE3o levar dano!!!!                            "
   - "Voc\xEA s\xF3 tem 5 de vida, ent\xE3o tente ao m\xE1ximo n\xE3o deixar o inimigo
-    te encostar!                                                         "
+    te encostar!"
   - "Ao matar os inimigos, caem moedas no ch\xE3o, ande sobre elas a fim de peg\xE1-las."
   textSpeed: 0.05
   index: 0
@@ -6616,9 +6616,9 @@ MonoBehaviour:
   textComponent: {fileID: 377045627}
   lines:
   - "Ap\xF3s o fim da onda de inimigos, voc\xEA ter\xE1 a chance de melhorar alguns
-    atributos.                                                                                   "
+    atributos."
   - "Al\xE9m disso, voc\xEA tamb\xE9m poder\xE1 adicionar uma arma, ou mudar as suas
-    atuais!                                "
+    atuais!"
   textSpeed: 0.05
   index: 0
   isTyping: 0
@@ -11751,6 +11751,7 @@ MonoBehaviour:
   aimBallSfx: {fileID: 8300000, guid: 6e29ed7e9ee6e2c49bf8fb3d4aa68da2, type: 3}
   kickBallSfx: {fileID: 8300000, guid: cd8f4c01be430014492a193495aca6b0, type: 3}
   hitBallWallSfx: {fileID: 8300000, guid: 3d165e723843f8d45bbf4f8b4436fbd7, type: 3}
+  typeSound: {fileID: 8300000, guid: 8a58072181912624684b866dd457390a, type: 3}
   myMixer: {fileID: 24100000, guid: 15a61bafec91ac64f8ca7df1e50b576a, type: 2}
 --- !u!4 &1373477368
 Transform:
