@@ -1273,8 +1273,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e3352813c8ff2b241909084616de9186, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2171,8 +2171,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e3352813c8ff2b241909084616de9186, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2971,8 +2971,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3941,6 +3941,7 @@ MonoBehaviour:
   musicGame: {fileID: 8300000, guid: 86844bf2201e243449471191d0fe2034, type: 3}
   musicMenu: {fileID: 8300000, guid: 67b70bbe5af5ddd42a0fd7c0706e02cd, type: 3}
   flipMusic: {fileID: 0}
+  flipGamesMusic: []
   hitOnPlayer: {fileID: 8300000, guid: 6b4764212e3ebe4419c033edcdec7667, type: 3}
   hitOnEnemy: {fileID: 8300000, guid: 11fff18db3b03aa468dfb695b328b1fa, type: 3}
   menuBtnIn: {fileID: 8300000, guid: 263a15d62203a4642b721c8678f234d8, type: 3}
@@ -3949,6 +3950,10 @@ MonoBehaviour:
   errorSfx: {fileID: 0}
   timerSfx: {fileID: 0}
   timerFinalSfx: {fileID: 0}
+  spawnSfx: {fileID: 0}
+  aimBallSfx: {fileID: 0}
+  kickBallSfx: {fileID: 0}
+  hitBallWallSfx: {fileID: 0}
   myMixer: {fileID: 24100000, guid: 15a61bafec91ac64f8ca7df1e50b576a, type: 2}
 --- !u!4 &1776790581
 Transform:
