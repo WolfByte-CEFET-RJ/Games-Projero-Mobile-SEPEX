@@ -31,6 +31,8 @@ public class AudioManager : MonoBehaviour
     [Header("\tShop effects")]
     public AudioClip[] upgradesSfx;
     public AudioClip errorSfx;
+    public AudioClip lockOpen;
+    public AudioClip lockClose;
 
     [Header("\tTimer effects")]
     public AudioClip timerSfx;

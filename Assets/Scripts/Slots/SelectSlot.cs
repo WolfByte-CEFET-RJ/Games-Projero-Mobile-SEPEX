@@ -60,6 +60,7 @@ public class SelectSlot : MonoBehaviour, IDropHandler
     IEnumerator OpenCadeado(WeaponDrag weap)
     {
         weap.CadeadoAnim.SetInteger("transition", 1);
+        AudioManager.main.PlaySFX(AudioManager.main.upgradesSfx[4]);
         yield return new WaitForSeconds(1);
         weap.CadeadoAnim.gameObject.SetActive(false);
     }

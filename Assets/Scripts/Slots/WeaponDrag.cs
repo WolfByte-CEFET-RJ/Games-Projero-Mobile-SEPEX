@@ -57,6 +57,7 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             if(cadeadoAnim != null)
             {
+                AudioManager.main.PlaySFX(AudioManager.main.lockOpen);
                 cadeadoAnim.SetInteger("transition", 0);//Animacao de abrir cadeado
             }
         }
@@ -95,6 +96,7 @@ public class WeaponDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         }
         else if (cadeadoAnim != null && cadeadoAnim.GetInteger("transition") != 1)//Se nao estiver tocando a anim de arma comprada...
         {
+            AudioManager.main.PlaySFX(AudioManager.main.lockClose);
             cadeadoAnim.SetInteger("transition", 2);//Executo a anim do cadeado trancando de volta
         }
 

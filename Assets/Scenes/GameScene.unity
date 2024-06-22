@@ -11745,6 +11745,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8fb87f839af85d045b89e42734fdd556, type: 3}
   - {fileID: 8300000, guid: 7504584acf0be6641b4d7234e23411d1, type: 3}
   errorSfx: {fileID: 8300000, guid: b8fea6f342a717d48af96b16014b386b, type: 3}
+  lockOpen: {fileID: 8300000, guid: a68f3aec297c52749b7c640e53345e08, type: 3}
+  lockClose: {fileID: 8300000, guid: 2db08ac963193d64fb545669af637768, type: 3}
   timerSfx: {fileID: 8300000, guid: 810d57c17c9470b48aea9727387e8a8a, type: 3}
   timerFinalSfx: {fileID: 8300000, guid: 56405e4a6dcc189488a87b815cebaeb2, type: 3}
   spawnSfx: {fileID: 8300000, guid: 96289f44b91602a43baf2255551aa7fc, type: 3}
