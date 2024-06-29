@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3929642341845604786}
   - component: {fileID: 8362136634075458471}
-  - component: {fileID: 7921251656760284246}
   - component: {fileID: 4222458104779833507}
+  - component: {fileID: 5142360678112685647}
   - component: {fileID: 2836749670790899684}
   m_Layer: 0
   m_Name: Ball
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2532813103228539933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2305381608687008865}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 649b91ae802b8a14d9f790a22ae1f85f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e708f78c7d7ca9b4698b9cf900467d26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7921251656760284246
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2532813103228539933}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: d23a18a7a126b8840a8c46297ecc1de5, type: 2}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.28
 --- !u!50 &4222458104779833507
 Rigidbody2D:
   serializedVersion: 4
@@ -125,6 +109,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &5142360678112685647
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2532813103228539933}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.19895871, y: 0.020441214}
+  serializedVersion: 2
+  m_Radius: 2.1366158
 --- !u!114 &2836749670790899684
 MonoBehaviour:
   m_ObjectHideFlags: 0
