@@ -34,7 +34,7 @@ public class FlipAttack : MonoBehaviour
         if(canAttack)
         {
             cronometer += Time.deltaTime;
-            if (cronometer >= frequenciaAtaque)
+            if (cronometer >= frequenciaAtaque && attackSelected)
             {
                 attackSelected.chargeAttack();//Essa funcao ira carregar e executar o ataque selecionado
                 cronometer = 0;
@@ -65,6 +65,9 @@ public class FlipAttack : MonoBehaviour
     public GameObject getBall() { return ball; }
 
     public GameObject getSpinDash() { return spinDashObj; }
+
+    public void setAttackSelectedToNull() { attackSelected = null; }//Metodo para parar qualquer ataque apos a morte do fliperama
+
     #endregion
 
 }

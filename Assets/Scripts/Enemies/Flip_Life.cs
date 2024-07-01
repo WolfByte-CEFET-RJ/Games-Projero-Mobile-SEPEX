@@ -8,6 +8,8 @@ public class Flip_Life : LifeSystem
     [SerializeField] private GameObject damageText;
     [SerializeField] private GameObject healthObj;
     private HealthBarFlip health;
+
+    private bool onDeath;
     // Start is called before the first frame update
     public void Start()
     {
@@ -26,11 +28,14 @@ public class Flip_Life : LifeSystem
             var damage = Instantiate(damageText, transform.position, Quaternion.identity);
             damage.SendMessage("SetText", dano);
         }
-        if (currentLife <= 0)
+        if (currentLife <= 0 && !onDeath)
         {
             //AudioManager.main.changeBgm(AudioManager.main.musicGame);
             //Destroy(gameObject);
             GetComponent<Animator>().SetTrigger("death");//Chama animacao de morte, que vai fazer a troca de sprites e troca de musicas
+            GetComponent<FlipAttack>().setAttackSelectedToNull();
+            GetComponent<FlipCutscene>().stopMovement();
+            onDeath = true;
         }
 
     }
