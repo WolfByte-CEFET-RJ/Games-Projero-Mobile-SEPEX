@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 389103384786374577}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.30513725}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6451746551028648015}
@@ -116,12 +116,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6451746551028648015}
   - component: {fileID: 6451746551028648014}
-  - component: {fileID: 6451746551028648013}
   - component: {fileID: -526572280950784995}
   - component: {fileID: 2794587949110998896}
   - component: {fileID: 4416222181881775588}
   - component: {fileID: 2592500109326591918}
   - component: {fileID: 8550067943271986312}
+  - component: {fileID: 7162192041908978968}
   m_Layer: 0
   m_Name: Xiu Teste
   m_TagString: Enemy
@@ -138,7 +138,7 @@ Transform:
   m_GameObject: {fileID: 6451746551028648012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.7, y: 0.74, z: 0}
-  m_LocalScale: {x: 1.7386, y: 1.7386, z: 1.7386}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2097721567040118653}
@@ -186,8 +186,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c5e7534645a445243b109f29d186d97e, type: 3}
-  m_Color: {r: 0.09182981, g: 0.6320754, b: 0.1333872, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 35fec5140313d604d8e387467ebdb700, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -197,22 +197,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &6451746551028648013
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6451746551028648012}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.005575895, y: -0.01115155}
-  m_Size: {x: 0.698905, y: 1.375507}
-  m_Direction: 0
 --- !u!114 &-526572280950784995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,3 +278,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &7162192041908978968
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451746551028648012}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.037677526, y: 0.11303139}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.8696856, y: 4.1711035}
+  m_EdgeRadius: 0
