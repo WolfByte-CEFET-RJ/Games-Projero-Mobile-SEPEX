@@ -11,7 +11,7 @@ public class SanicStrategy : IAttackStrategy
     private bool onAtack;
     public bool getOnAtack() { return onAtack; }
 
-    private const float boostSpeed = 3.5f;
+    private const float boostSpeed = 3.125f;
     public override void attack()
     {
         StartCoroutine(attackLogic());

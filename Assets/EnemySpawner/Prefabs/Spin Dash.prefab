@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5976564731577827061}
   - component: {fileID: 5976564731577827062}
   - component: {fileID: 5795071020719359341}
-  - component: {fileID: 3370737541088468832}
   - component: {fileID: 3827564459212015742}
+  - component: {fileID: 3517739734217167319}
   m_Layer: 0
   m_Name: Spin Dash
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5976564731577827063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.03000021, y: 10, z: 0}
-  m_LocalScale: {x: 11, y: 11, z: 10.459}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.05262598, g: 0, b: 0.9056604, a: 0.74509805}
+  m_Sprite: {fileID: 21300000, guid: 588eadd2ec2a9bc4f9d03bb1c36e5a96, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,22 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
---- !u!58 &3370737541088468832
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5976564731577827063}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.49999997
 --- !u!114 &3827564459212015742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,3 +112,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3a5b67f48e3cef40b49ae6415c1a7fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: -300
+--- !u!58 &3517739734217167319
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5976564731577827063}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.016441727, y: -0.010961152}
+  serializedVersion: 2
+  m_Radius: 1.102597

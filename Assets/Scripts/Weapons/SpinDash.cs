@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpinDash : MonoBehaviour
 {
     private SanicStrategy san;
+    [SerializeField] private float speed;
     void Start()
     {
         san = gameObject.GetComponentInParent<SanicStrategy>();
@@ -27,5 +28,10 @@ public class SpinDash : MonoBehaviour
     {
         yield return new WaitForSeconds(0.125f);
         san.StopBoss();
+    }
+
+    private void LateUpdate()
+    {
+        transform.Rotate(speed * Time.deltaTime * Vector3.forward);
     }
 }
