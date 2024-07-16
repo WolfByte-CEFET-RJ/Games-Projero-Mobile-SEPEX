@@ -9,12 +9,13 @@ public class BombaPatchStrategy : IAttackStrategy
     private const float downgrade = 5;
     private Transform playerPos;
     private Transform targetTransf;
-    private FlipCutscene speed;
+    private EnemyFollow enFollow;
     public override void attack()
     {
         //Vector3 direction = playerPos.position - transform.position;
         //currentBall.GetComponent<Rigidbody2D>().AddForce(direction * force, ForceMode2D.Impulse);
         //Destroy(currentBall, 10);
+
         AudioManager.main.PlaySFX(AudioManager.main.kickBallSfx);
         SoccerBall soc = currentBall.GetComponent<SoccerBall>();
         soc.SetTarget(targetTransf.position);
@@ -32,14 +33,14 @@ public class BombaPatchStrategy : IAttackStrategy
     // Start is called before the first frame update
     void Start()
     {
-        speed = gameObject.GetComponent<FlipCutscene>();
+        enFollow = gameObject.GetComponent<EnemyFollow>();
         ball = gameObject.GetComponent<FlipAttack>().getBall();
         playerPos = FindObjectOfType<PlayerMove>().transform;
     }
 
     IEnumerator controllSpeed()
     {
-        speed.stopMovement();
+        enFollow.Speed = 0;
         for(int i=0; i<10; i++)
         {
             targetTransf.position = playerPos.position;
@@ -49,7 +50,7 @@ public class BombaPatchStrategy : IAttackStrategy
         targetTransf.position = playerPos.position;
         yield return new WaitForSeconds(0.3f);
         attack();
-        speed.startMovement();
+        enFollow.Speed = enFollow.getInitialSpeed();
         targetTransf.localScale = Vector3.zero;
 
     }

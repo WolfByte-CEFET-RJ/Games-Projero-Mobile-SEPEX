@@ -1015,9 +1015,10 @@ MonoBehaviour:
     de Desenvolvimento</b>\r</size>\n\r<br><br>\n<size=40>Programa\xE7\xE3o\r</size>\r<br>\n<size=30>Bruno
     Chaves</size>\r\n<size=30>Jo\xE3o Guilherme</size>\r\n<size=30>Joel Tavares</size>\r\n<size=30>Mateus
     Santos</size>\r\n<size=30>Nat\xE1lia Santos</size>\r\n<size=30>Renato Alves</size>\r\n<size=30>Rodrigo
-    da Costa</size>\r\n\r<br><br>\n<size=40>Arte & Som\r</size><br>\n<size=30>Arthur
+    da Costa</size>\r\n<size=30>Manu Sobrenome (algu\xE9m tem que lembrar de atualizar
+    os cr\xE9ditos)</size>\r\n\r<br><br>\n<size=40>Arte & Som\r</size><br>\n<size=30>Arthur
     Chavarri</size>\r\n<size=30>Bruno Gabriel</size>\r\n<size=30>Jo\xE3o Pedro Francisco</size>\r\n<size=30>Miguel
-    \xC2ngelo</size>\r\n<size=30>Thayse Bachmeyer</size>\r\n<br><br>\n<b>Agradecimentos\r</b>\n<size=30>Ao
+    \xC2ngelo</size>\r\n<size=30>Paulo Vitor</size>\r\n<size=30>Thayse Bachmeyer</size>\r\n\n<br><br>\n<b>Agradecimentos\r</b>\n<size=30>Ao
     IEEE, Fam\xEDlia e amigos</size>\n<br><br><br><br><br>\nE a voc\xEA!<br>\nObrigado
     por jogar nosso jogo!\n<br><br><br><br><br><br><br><br><br><br><br><br>\nFIM?"
   m_isRightToLeft: 0
@@ -1123,7 +1124,7 @@ RectTransform:
   m_GameObject: {fileID: 1889338851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.18683, y: 0.18683, z: 0.18683}
+  m_LocalScale: {x: 0.3007776, y: 0.3007776, z: 0.3007776}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1824807087}
@@ -1131,8 +1132,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 601}
-  m_SizeDelta: {x: 411, y: 650}
+  m_AnchoredPosition: {x: 0, y: 659}
+  m_SizeDelta: {x: 640, y: 640}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889338853
 MonoBehaviour:

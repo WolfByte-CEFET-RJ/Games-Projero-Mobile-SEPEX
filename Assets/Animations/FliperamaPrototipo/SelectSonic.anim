@@ -348,13 +348,13 @@ AnimationClip:
     - time: 4.181818
       value: {fileID: 21300000, guid: 3a9331136fd0b944ab779148d5697791, type: 3}
     - time: 4.2909093
-      value: {fileID: 21300000, guid: f9b53b0245ec0cb4c85914599aea72e9, type: 3}
+      value: {fileID: 21300000, guid: 0bb41bb3b71eb0f49ac230025183b20f, type: 3}
     - time: 4.4
       value: {fileID: 21300000, guid: 3a9331136fd0b944ab779148d5697791, type: 3}
     - time: 4.509091
-      value: {fileID: 21300000, guid: f9b53b0245ec0cb4c85914599aea72e9, type: 3}
+      value: {fileID: 21300000, guid: 0bb41bb3b71eb0f49ac230025183b20f, type: 3}
     - time: 4.5272727
-      value: {fileID: 0}
+      value: {fileID: 21300000, guid: 0bb41bb3b71eb0f49ac230025183b20f, type: 3}
     attribute: m_Sprite
     path: FLIPERAMA/Tela
     classID: 212
@@ -418,10 +418,10 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: 3a9331136fd0b944ab779148d5697791, type: 3}
     - {fileID: 21300000, guid: 3a9331136fd0b944ab779148d5697791, type: 3}
-    - {fileID: 21300000, guid: f9b53b0245ec0cb4c85914599aea72e9, type: 3}
+    - {fileID: 21300000, guid: 0bb41bb3b71eb0f49ac230025183b20f, type: 3}
     - {fileID: 21300000, guid: 3a9331136fd0b944ab779148d5697791, type: 3}
-    - {fileID: 21300000, guid: f9b53b0245ec0cb4c85914599aea72e9, type: 3}
-    - {fileID: 0}
+    - {fileID: 21300000, guid: 0bb41bb3b71eb0f49ac230025183b20f, type: 3}
+    - {fileID: 21300000, guid: 0bb41bb3b71eb0f49ac230025183b20f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -27,10 +27,13 @@ public class FlipCutscene : MonoBehaviour
     {
         enFollow.Speed = 0;
     }
+    private bool startAttack = false;
     public void startMovement()
     {
         enFollow.Speed = enFollow.getInitialSpeed();
         int gameChosen = GetComponent<Animator>().GetInteger("jogoAtaque");
+
+
         AudioManager.main.changeBgm(AudioManager.main.flipGamesMusic[gameChosen]);
     }
 
