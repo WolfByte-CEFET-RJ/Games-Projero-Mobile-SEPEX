@@ -98,6 +98,10 @@ public class WaveSpawner : MonoBehaviour
     {
         if (t == 0)
         {
+            if (PlayerScore.Instance != null)
+            {
+                PlayerScore.Instance.PausarTimer();
+            }
             UpdateStartWaveText();
             botao.SetActive(true);
             playerLife.ResetLife();//Recuperar vida automaticamente
@@ -108,6 +112,10 @@ public class WaveSpawner : MonoBehaviour
     }
     void OffBot()
     {
+        if (PlayerScore.Instance != null)
+        {
+            PlayerScore.Instance.DespausarTimer();
+        }
         botao.SetActive(false);
         anim.Play("ShopExit");
     }

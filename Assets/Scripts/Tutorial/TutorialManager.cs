@@ -167,9 +167,9 @@ public class TutorialManager : MonoBehaviour
         }
         waveSpawnerTutorial.PodeSpawnarTutorial(); //--> permite que a wave seja spawnada de forma normal
         playerLife.ResetLife(); //--> Reseta a vida do Player
-        playerCoin.CoinReset(); //--> Reseta as moedas do Player
-        PlayerPrefs.SetInt("Tutorial", 0);
+        playerCoin.CoinReset(); //--> Reseta as moedas do Player        
         Destroy(gameObject); //--> destroi todos os elementos do tutorial
+        PlayerPrefs.SetInt("Tutorial", 0);
 
     }
 }

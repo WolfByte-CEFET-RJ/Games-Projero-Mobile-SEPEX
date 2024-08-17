@@ -7,7 +7,7 @@ public class EnemyLife : LifeSystem
     [Header("CommonEnemySettings")]
     [SerializeField] private GameObject coin;
     [SerializeField] private GameObject damageText;
-
+    private int verifica;
     void Start()
     {
 
@@ -26,6 +26,15 @@ public class EnemyLife : LifeSystem
         {
             Instantiate(coin, transform.position, transform.rotation);
             Destroy(gameObject);
+        }
+    }
+    private void OnDestroy()
+    {
+        verifica = PlayerPrefs.GetInt("Tutorial");
+        // Notifica o EnemyManager que este inimigo foi destruído
+        if (PlayerScore.Instance != null && verifica != 1)
+        {
+            PlayerScore.Instance.EnemyDestroyed();
         }
     }
     // Update is called once per frame

@@ -22,6 +22,10 @@ public class GameOver : MonoBehaviour
     }
     void ShowGameOver()
     {
+        if (PlayerScore.Instance != null)
+        {
+            PlayerScore.Instance.PausarTimer();
+        }
         gamOvPanel.SetActive(true);
         //Mostrar highScore??
         //Tocar som de gameOver

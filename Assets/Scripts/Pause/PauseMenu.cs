@@ -9,12 +9,20 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause() 
     {
+        if (PlayerScore.Instance != null)
+        {
+            PlayerScore.Instance.PausarTimer();
+        }
         PausePanel.SetActive(true); //--> ativa o painel
         Time.timeScale = 0f; //--> pausa o jogo
     }
 
     public void Resume()
     {
+        if (PlayerScore.Instance != null)
+        {
+            PlayerScore.Instance.DespausarTimer();
+        }
         PausePanel.SetActive(false); //--> desliga o painel
         Time.timeScale = 1f; //--> resume o jogo
     }

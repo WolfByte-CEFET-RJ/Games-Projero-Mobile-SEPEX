@@ -9,6 +9,10 @@ public class MenusButtons : MonoBehaviour
     [HideInInspector] public bool _podeIniciarJogo = true;
     public static MenusButtons main;
     public int primeiraSessao;
+    public GameObject animacaoAtualLobo;
+    public GameObject animacaoAtualClique;
+    public GameObject animacaoFuturaLobo;
+
     private void Start()
     {
         primeiraSessao = PlayerPrefs.GetInt("PrimeiraSessao");
@@ -17,7 +21,7 @@ public class MenusButtons : MonoBehaviour
             PlayerPrefs.SetInt("Tutorial", 1);
             PlayerPrefs.SetInt("PrimeiraSessao", 1);
         }
-        
+        animacaoFuturaLobo.SetActive(false);
     }
     void Awake(){
         main = this;
@@ -54,8 +58,61 @@ public class MenusButtons : MonoBehaviour
     {
         //AudioManager.main.PlaySFX(btnIn);     Rodrigo
         //yield return new WaitForSeconds(2f);  Rodrigo
-        SceneManager.LoadScene(nomeDaCena);
+        //SceneManager.LoadScene(nomeDaCena);  Bruno
+
+        StartCoroutine(TransicaoDeCena(nomeDaCena));
+        
     }
+    private IEnumerator TransicaoDeCena(string nomeDaCena)
+    {
+        // Desabilitar o GameObjectscom a animação do lobo dormindo
+        if (animacaoAtualLobo != null)
+        {
+            Animator animAtualLobo = animacaoAtualLobo.GetComponent<Animator>();
+            if (animAtualLobo != null)
+            {
+                animAtualLobo.speed = 0f; // Pausa a animação
+            }
+            Destroy(animacaoAtualLobo); // Agora destroi o GameObject
+        }
+
+        // Aumentar a velocidade da animação do CliqueParaComeçar
+        if (animacaoAtualClique != null)
+        {
+            Animator animClique = animacaoAtualClique.GetComponent<Animator>();
+            if (animClique != null)
+            {
+                animClique.speed = 5.0f; // Ajuste a velocidade conforme necessário
+            }
+        }
+        // Ativar a animação do lobo e esperar o seu final para mudar de cena
+        if (animacaoFuturaLobo != null)
+        {
+            animacaoFuturaLobo.SetActive(true); // Certifique-se de ativar o GameObject
+
+            // Verifica se o Animator está presente e obtém a animação
+            Animator animFuturaLobo = animacaoFuturaLobo.GetComponent<Animator>();
+            if (animFuturaLobo != null)
+            {
+                // Espera até que a animação termine
+                while (!animFuturaLobo.GetCurrentAnimatorStateInfo(0).IsName("Awakening") ||
+                       animFuturaLobo.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+                {
+                    yield return null;
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Animator não encontrado no objeto animacaoFuturaLobo.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("animacaoFuturaLobo não está atribuído.");
+        }
+        SceneManager.LoadScene(nomeDaCena);        
+    }
+
     // Funcao de iniciar o jogo com o tutorial
     public void TutorialBtn()
     {
