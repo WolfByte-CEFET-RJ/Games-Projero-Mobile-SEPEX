@@ -27,7 +27,17 @@ public class GameOverScore : MonoBehaviour
 
             // Calcula o valor final (inimigos mortos * tempo jogado)
             int finalScore = totalEnemies * totalTime;
-
+            if (finalScore < 10000){
+                finalScoreText.color = Color.red;
+            }
+            if (finalScore < 20000 && finalScore > 10000)
+            {
+                finalScoreText.color = Color.yellow;
+            }
+            if (finalScore > 30000)
+            {
+                finalScoreText.color = Color.green;
+            }
             // Atualiza os textos de TextMeshPro com os valores
             if (totalEnemiesText != null)
                 totalEnemiesText.text = "x " + totalEnemies.ToString();
