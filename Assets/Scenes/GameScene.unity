@@ -3689,7 +3689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a6df1e9850a9b4b84aac7523dc0714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDragReference: {fileID: 1576154483}
+  weaponDragReference: {fileID: 1052494069}
   playerSlotTransf: {fileID: 82097523}
   outsideTransf: {fileID: 1807923394}
 --- !u!1 &418892635
@@ -4881,6 +4881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamOvPanel: {fileID: 680119045}
+  waveSpawnerObj: {fileID: 182941473}
 --- !u!4 &519359594
 Transform:
   m_ObjectHideFlags: 0
@@ -5324,7 +5325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a6df1e9850a9b4b84aac7523dc0714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponDragReference: {fileID: 1052494069}
+  weaponDragReference: {fileID: 1576154483}
   playerSlotTransf: {fileID: 1525937173}
   outsideTransf: {fileID: 1807923394}
 --- !u!1 &561526455

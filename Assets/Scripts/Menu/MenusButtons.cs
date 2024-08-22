@@ -21,7 +21,8 @@ public class MenusButtons : MonoBehaviour
             PlayerPrefs.SetInt("Tutorial", 1);
             PlayerPrefs.SetInt("PrimeiraSessao", 1);
         }
-        animacaoFuturaLobo.SetActive(false);
+        if(animacaoFuturaLobo)//Tava dando unsignedReferenceException. É só uma checagem se é igual a null pra acao
+            animacaoFuturaLobo.SetActive(false);
     }
     void Awake(){
         main = this;

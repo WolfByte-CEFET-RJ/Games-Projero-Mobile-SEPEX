@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 {
     public static Action onGameOver;
     [SerializeField] private GameObject gamOvPanel;
+    [SerializeField] private GameObject waveSpawnerObj;
     void OnEnable()
     {
         onGameOver += ShowGameOver;
@@ -27,6 +28,7 @@ public class GameOver : MonoBehaviour
             PlayerScore.Instance.PausarTimer();
         }
         gamOvPanel.SetActive(true);
+        waveSpawnerObj.SetActive(false);//Evitar que apos Game Over o player possa passar de fase (como ocorrido na ultima reuniao). 
         //Mostrar highScore??
         //Tocar som de gameOver
         //Todos os etc de quando o Player morrer
