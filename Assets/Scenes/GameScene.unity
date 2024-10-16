@@ -2033,6 +2033,7 @@ MonoBehaviour:
     - {fileID: 5626236865653759281, guid: 22f363285a4cc784dbc9683a9e62d68e, type: 3}
     - {fileID: 1065464082365921123, guid: ac7211117f8df4e4ab5f88d98b9cd82a, type: 3}
     - {fileID: 8575146113668735279, guid: 0227a97cf67903f42bd707be76493e68, type: 3}
+    - {fileID: 1210495720006009106, guid: efcf3dbfe297bea4c92e730b193e873b, type: 3}
     boss: {fileID: 3857139133010849487, guid: 10f8396f69264df42b4da84d29305001, type: 3}
     spawnInterval: 1.1
   - waveName: Wave 4
@@ -2041,6 +2042,7 @@ MonoBehaviour:
     - {fileID: 5626236865653759281, guid: 22f363285a4cc784dbc9683a9e62d68e, type: 3}
     - {fileID: 1065464082365921123, guid: ac7211117f8df4e4ab5f88d98b9cd82a, type: 3}
     - {fileID: 8575146113668735279, guid: 0227a97cf67903f42bd707be76493e68, type: 3}
+    - {fileID: 1210495720006009106, guid: efcf3dbfe297bea4c92e730b193e873b, type: 3}
     boss: {fileID: 1450826777653584437, guid: dc76fb1c680649e4ab82cc09b7e0bd75, type: 3}
     spawnInterval: 0.7
   - waveName: Wave 5
@@ -2049,6 +2051,7 @@ MonoBehaviour:
     - {fileID: 5626236865653759281, guid: 22f363285a4cc784dbc9683a9e62d68e, type: 3}
     - {fileID: 1065464082365921123, guid: ac7211117f8df4e4ab5f88d98b9cd82a, type: 3}
     - {fileID: 8575146113668735279, guid: 0227a97cf67903f42bd707be76493e68, type: 3}
+    - {fileID: 1210495720006009106, guid: efcf3dbfe297bea4c92e730b193e873b, type: 3}
     boss: {fileID: 1450826777653584437, guid: dc76fb1c680649e4ab82cc09b7e0bd75, type: 3}
     spawnInterval: 0.3
   - waveName: Final Wave
